@@ -6,8 +6,10 @@ class Node:
 
 class LinkedList:
     def __init__(self):
+        # indicating the LL is empty
         self.head = None
 
+    # operations
     def print_LL(self):
         if self.head is None:
             print("Linked list is empty!")
@@ -17,6 +19,13 @@ class LinkedList:
                 print(n.data, "-->", end=" ")
                 n = n.ref
             print("\n")
+
+    def add_empty(self, data):
+        if self.head is None:
+            new_node = Node(data)
+            self.head = new_node
+        else:
+            print('the list is not empty')
 
     def add_begin(self, data):
         new_node = Node(data)
@@ -68,13 +77,6 @@ class LinkedList:
             new_node.ref = n.ref
             n.ref = new_node
 
-    def add_empty(self, data):
-        if self.head is None:
-            new_node = Node(data)
-            self.head = new_node
-        else:
-            print('the list is not empty')
-
     def pop(self):  # delete first node
         if self.head is None:
             print('the list is empty')
@@ -112,10 +114,13 @@ class LinkedList:
 
 ll1 = LinkedList()
 ll1.print_LL()
-ll1.add_begin(10)
+
+ll1.add_empty(10)
 ll1.print_LL()
+
 ll1.add_begin(20)
 ll1.print_LL()
+
 ll1.add_begin(30)
 ll1.print_LL()
 
