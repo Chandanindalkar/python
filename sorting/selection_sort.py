@@ -1,4 +1,4 @@
-nums = [5, 3, 6, 2, 10];
+nums = [5, 3, 6, 2, 3, 10]
 
 
 def find_smallest(arr):
