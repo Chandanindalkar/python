@@ -19,7 +19,7 @@ search_queue += graph["you"]
 searched_queue.add("you")
 
 def mangoSeller(name):
-    return True if name[-1] == 'm' else False
+    return True if name[-1] == 'Z' else False
 
 while search_queue:
     person = search_queue.popleft()
@@ -29,5 +29,7 @@ while search_queue:
         else:
             search_queue += graph[person]
             searched_queue.add(person)
+
+print('\fThere is no Mango Seller in your network')
 
 # print(search_queue)
