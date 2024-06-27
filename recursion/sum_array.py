@@ -1,5 +1,7 @@
 nums = [2,4,6,8,10]
 
+# recursively add list elements
+
 # def sum_array(arr):
 #     total = 0
 #     copied_array = arr
