@@ -1,13 +1,19 @@
-x = 640
-y = 1680
+# base case: if (length % breadth) == 0
+# recursive case: euclids(new_length, breadth)
 
-# doesnt work when y can accomodate more than 2x
-def euclid(x, y):
-    if y == (2*x):
-        print(x)
-        return x
+def euclids(x, y, area=None):
+    length = x if x > y else y
+    breadth = y if y < x else x
+    if area is None:
+        area = x*y
+        
+    if (length % breadth) == 0:
+        print('Biggest Square would be of size:', breadth, 'x', breadth)
+        total_boxes = (area//(breadth*breadth))
+        print('The plot can be divided into', total_boxes, 'biggest squares')
     else:
-        print(x)
-        euclid(y-x, x)
+        biggest_boxes = length // breadth
+        x = length - (biggest_boxes * breadth)
+        euclids(x,breadth, area)
 
-euclid(x,y)
+euclids(1680, 640)
